@@ -1,98 +1,132 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+    // <View style={styles.titleContainer}>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}>
+    //       <Text style={{ color: "red",fontSize:12,textAlign:"center",lineHeight:100 }}>1</Text>
+    //     </View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}>
+    //       <Text style={{ color: "red" }}>1</Text>
+    //     </View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //   </View>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //   </View>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //   </View>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //   </View>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //   </View>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //   </View>
+    //   <View style={styles.rowContainer}>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "white" }]}></View>
+    //     <View style={[styles.box, { backgroundColor: "black" }]}></View>
+    //   </View>
+
+    // </View>
+
+
+    <View style={{ flex: 1, backgroundColor: "oldlace", borderWidth: 5, borderColor: "coral", marginBlock: 40, marginHorizontal: 10, borderCurve: 'circular' }}>
+      <Text style={{ marginHorizontal: 'auto', marginTop: 80, fontWeight: 'bold', fontSize: 20, borderBottomWidth: 2, borderColor: "white", paddingBlock: 10, paddingHorizontal: 60 }}>Hello, this is <Text style={{ color: "coral" }}>Ankit</Text></Text>
+      <Text style={{ paddingHorizontal: 18, paddingVertical: 3, paddingTop: 40 }}>I am from Ballia.</Text>
+      <Text style={{ paddingHorizontal: 18, paddingVertical: 3 }}>I have done my doploma from MMIT Hariharpur Gorakhpur in cse.</Text>
+      <Text style={{ paddingHorizontal: 18, paddingVertical: 3 }}>After completing my, I join tecpile technology and Gained Hands on experience on Mern.</Text>
+      <Text style={{ paddingHorizontal: 18, paddingVertical: 3 }}>I recommend techpile technology to my juniors , who want to develop their skills in tech.</Text>
+      <Text style={{ textAlign: 'center', marginBlock: 20, fontSize: 15, fontWeight: 'bold' }}>Thank You</Text>
+    </View>
+
+    // <View style={{ marginTop: 40 }}>
+    //   <TextInput style={styles.mInput} autoComplete='username'  placeholder='enter your name...' />
+    //   <TextInput style={styles.mInput} autoComplete='email' placeholder='enter your email...' />
+    //   <TextInput style={styles.mInput} autoComplete='new-password' placeholder='enter your password...' />
+    //   <Button title='Submit'/>
+    // </View>
+  )
 }
 
 const styles = StyleSheet.create({
   titleContainer: {
+    flex: 1,
+    // justifyContent: "center", alignItems: "center",
+    flexDirection: 'column',
+    backgroundColor: "red",
+    // ,
+    // margin: "auto",
+    // gap: 12,
+  },
+  rowContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+    // flex: 1,
+    // backgroundColor: "black"
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  box: {
+    backgroundColor: "white",
+    width: 50,
+    height: 100,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
+  mInput: {
+    height: 40,
+    marginVertical: 5,
+    marginHorizontal: 20,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 5
+  }
 });
